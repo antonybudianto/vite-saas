@@ -3,17 +3,21 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-
 import { Switch } from 'react-router';
 
+import LoadableComponent from './components/LoadableComponent/LoadableComponent';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthRedirectRoute from './components/AuthRedirectRoute/AuthRedirectRoute';
-import HomeView from './scenes/Home';
-import LoginView from './scenes/Login';
 import Navbar from './components/Navbar';
 import { updateAuth } from './reducers/auth';
-
 import './App.css';
+
+const HomeView = LoadableComponent({
+  loader: () => import('./scenes/Home')
+});
+const LoginView = LoadableComponent({
+  loader: () => import('./scenes/Login')
+});
 
 class App extends Component {
   state = {
@@ -48,7 +52,7 @@ class App extends Component {
           <div className="container">
             <div className="row">
               <div className="col-md-12 mt-3">
-              Loading...
+              Checking authentication...
               </div>
             </div>
           </div> :
