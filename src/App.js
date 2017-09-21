@@ -8,15 +8,15 @@ import { Switch } from 'react-router';
 import LoadableComponent from './components/LoadableComponent/LoadableComponent';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import AuthRedirectRoute from './components/AuthRedirectRoute/AuthRedirectRoute';
-import Navbar from './components/Navbar';
+import Navbar from './components/Navbar/Navbar';
 import { updateAuth } from './reducers/auth';
 import './App.css';
 
 const HomeView = LoadableComponent({
-  loader: () => import('./scenes/Home')
+  loader: () => import('./scenes/Home/HomeView')
 });
 const LoginView = LoadableComponent({
-  loader: () => import('./scenes/Login')
+  loader: () => import('./scenes/Login/LoginView')
 });
 
 class App extends Component {
