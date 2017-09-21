@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import { NavLink } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { toggleCollapse, toggleUserDropdown } from '../../reducers/nav';
 
@@ -36,7 +37,7 @@ class Navbar extends Component {
         <div className={(this.props.nav.collapsed ? 'collapse' : '') + ' navbar-collapse'} id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <a className="nav-link" href="#home">Home <span className="sr-only">(current)</span></a>
+              <NavLink to="/" exact className="nav-link" href="#home">Home <span className="sr-only">(current)</span></NavLink>
             </li>
           </ul>
           <ul className="navbar-nav">
