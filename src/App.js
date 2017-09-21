@@ -1,17 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 
-import { Switch, Route } from 'react-router';
+import { Switch } from 'react-router';
 
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
+import AuthRedirectRoute from './components/AuthRedirectRoute/AuthRedirectRoute';
 import HomeView from './scenes/Home';
+import LoginView from './scenes/Login';
 import Navbar from './components/Navbar';
 import { updateAuth } from './reducers/auth';
 
 import './App.css';
 
 class App extends Component {
+  state = {
+    loading: true
+  };
+
   componentDidMount() {
     const config = {
       apiKey: "AIzaSyBRPAvLUFnJ4GqCAizfXUMA-6tzksS39TA",
@@ -23,17 +31,33 @@ class App extends Component {
     };
     firebase.initializeApp(config);
     firebase.auth().onAuthStateChanged(user => {
+      console.log(user);
       this.props.dispatch(updateAuth(user));
+      this.setState({ loading: false });
     });
   }
 
   render() {
+    const isAuth = this.props.auth.user !== null;
+
     return (
       <div className="App">
         <Navbar />
-        <Switch>
-          <Route exact path="/" component={HomeView} />
-        </Switch>
+        {
+          this.state.loading ?
+          <div className="container">
+            <div className="row">
+              <div className="col-md-12 mt-3">
+              Loading...
+              </div>
+            </div>
+          </div> :
+          <Switch>
+            <PrivateRoute isAuth={isAuth}
+              exact path="/" component={HomeView} />
+            <AuthRedirectRoute isAuth={isAuth} path="/login" component={LoginView} />
+          </Switch>
+        }
       </div>
     );
   }
@@ -42,5 +66,6 @@ class App extends Component {
 const AppWithState = connect(({auth}) => ({
   auth
 }))(App);
+const AppWithRouter = withRouter(AppWithState);
 
-export default AppWithState;
+export default AppWithRouter;
