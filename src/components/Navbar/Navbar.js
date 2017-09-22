@@ -55,7 +55,8 @@ class Navbar extends Component {
                 <div className={(this.props.nav.showUserDropdown ? 'show' : '') + ' dropdown-menu'} aria-labelledby="navbarDropdownMenuLink">
                   <a onClick={this.signOut} className="dropdown-item" href="#signout">Sign out</a>
                 </div>
-              </li> : null
+              </li> :
+                <NavLink className="btn btn-outline-info" to="/login">Login</NavLink>
             }
           </ul>
         </div>
