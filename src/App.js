@@ -4,6 +4,7 @@ import { withRouter } from 'react-router';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { Switch } from 'react-router';
+import { compose } from 'recompose';
 
 import LoadableComponent from './components/LoadableComponent/LoadableComponent';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
@@ -67,9 +68,9 @@ class App extends Component {
   }
 }
 
-const AppWithState = connect(({auth}) => ({
-  auth
-}))(App);
-const AppWithRouter = withRouter(AppWithState);
+const mapStateToProps = ({ auth }) => ({ auth });
 
-export default AppWithRouter;
+export default compose(
+  withRouter,
+  connect(mapStateToProps)
+)(App);
