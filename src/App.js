@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter } from 'react-router';
+import { withRouter, Route } from 'react-router';
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import { Switch } from 'react-router';
@@ -18,6 +18,9 @@ const HomeView = LoadableComponent({
 });
 const LoginView = LoadableComponent({
   loader: () => import('./scenes/Login/LoginView')
+});
+const LandingView = LoadableComponent({
+  loader: () => import('./scenes/Landing/LandingView')
 });
 
 class App extends Component {
@@ -58,9 +61,9 @@ class App extends Component {
             </div>
           </div> :
           <Switch>
-            <PrivateRoute isAuth={isAuth}
-              exact path="/" component={HomeView} />
+            <PrivateRoute isAuth={isAuth} path="/dashboard" component={HomeView} />
             <AuthRedirectRoute isAuth={isAuth} path="/login" component={LoginView} />
+            <Route path="/" exact component={LandingView} />
           </Switch>
         }
       </div>

@@ -27,9 +27,11 @@ class Navbar extends Component {
   }
 
   render() {
+    const isAuth = this.props.auth.user !== null;
+
     return (
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a className="navbar-brand" href="#nav">MayonTeam</a>
+        <NavLink to="/" exact className="navbar-brand" href="#nav">MayonTeam</NavLink>
         <button onClick={this.toggleNav} className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
@@ -37,12 +39,15 @@ class Navbar extends Component {
         <div className={(this.props.nav.collapsed ? 'collapse' : '') + ' navbar-collapse'} id="navbarSupportedContent">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
-              <NavLink to="/" exact className="nav-link" href="#home">Home <span className="sr-only">(current)</span></NavLink>
+              {
+                isAuth &&
+                <NavLink to="/dashboard" exact className="nav-link" href="#dashboard">Dashboard <span className="sr-only">(current)</span></NavLink>
+              }
             </li>
           </ul>
           <ul className="navbar-nav">
             {
-              this.props.auth.user !== null ?
+              isAuth ?
               <li className="nav-item dropdown">
                 <a onClick={this.toggleUserDropdown} className="nav-link dropdown-toggle" href="#user" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   Welcome, {this.props.auth.user.displayName}
