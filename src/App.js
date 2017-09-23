@@ -49,7 +49,7 @@ class App extends Component {
     const isAuth = this.props.auth.user !== null;
 
     return (
-      <div className="App">
+      <div className="App" id="app">
         <Navbar />
         {
           this.state.loading ?

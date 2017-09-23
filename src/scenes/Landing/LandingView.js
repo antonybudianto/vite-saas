@@ -47,7 +47,7 @@ const LandingView = () => (
         <footer className="text-muted">
           <div className="container">
             <p className="float-right">
-              <button className="btn btn-link" href="#">Back to top</button>
+              <a href="#app">Back to top</a>
             </p>
             <p>&copy; 2017 MayonTeam.  </p>
           </div>
