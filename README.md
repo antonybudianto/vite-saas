@@ -1,5 +1,8 @@
 ## CRA Hackathon
 
+<img src="http://i68.tinypic.com/1zvpvd4.png" />
+
+
 Create React App for Hackathon, a very opinionated starter
 
 Technology stacks:
