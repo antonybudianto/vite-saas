@@ -14,28 +14,28 @@ import { updateAuth } from './reducers/auth';
 import './App.css';
 
 const HomeView = LoadableComponent({
-  loader: () => import('./scenes/Home/HomeView')
+  loader: () => import('./scenes/Home/HomeView'),
 });
 const LoginView = LoadableComponent({
-  loader: () => import('./scenes/Login/LoginView')
+  loader: () => import('./scenes/Login/LoginView'),
 });
 const LandingView = LoadableComponent({
-  loader: () => import('./scenes/Landing/LandingView')
+  loader: () => import('./scenes/Landing/LandingView'),
 });
 
 class App extends Component {
   state = {
-    loading: true
+    loading: true,
   };
 
   componentDidMount() {
     const config = {
-      apiKey: "AIzaSyBRPAvLUFnJ4GqCAizfXUMA-6tzksS39TA",
-      authDomain: "mayonteam.firebaseapp.com",
-      databaseURL: "https://mayonteam.firebaseio.com",
-      projectId: "mayonteam",
-      storageBucket: "mayonteam.appspot.com",
-      messagingSenderId: "9081437321"
+      apiKey: 'AIzaSyBRPAvLUFnJ4GqCAizfXUMA-6tzksS39TA',
+      authDomain: 'mayonteam.firebaseapp.com',
+      databaseURL: 'https://mayonteam.firebaseio.com',
+      projectId: 'mayonteam',
+      storageBucket: 'mayonteam.appspot.com',
+      messagingSenderId: '9081437321',
     };
     firebase.initializeApp(config);
     firebase.auth().onAuthStateChanged(user => {
@@ -51,21 +51,27 @@ class App extends Component {
     return (
       <div className="App" id="app">
         <Navbar />
-        {
-          this.state.loading ?
+        {this.state.loading ? (
           <div className="container">
             <div className="row">
-              <div className="col-md-12 mt-3">
-              Checking authentication...
-              </div>
+              <div className="col-md-12 mt-3">Checking authentication...</div>
             </div>
-          </div> :
+          </div>
+        ) : (
           <Switch>
-            <PrivateRoute isAuth={isAuth} path="/dashboard" component={HomeView} />
-            <AuthRedirectRoute isAuth={isAuth} path="/login" component={LoginView} />
+            <PrivateRoute
+              isAuth={isAuth}
+              path="/dashboard"
+              component={HomeView}
+            />
+            <AuthRedirectRoute
+              isAuth={isAuth}
+              path="/login"
+              component={LoginView}
+            />
             <Route path="/" exact component={LandingView} />
           </Switch>
-        }
+        )}
       </div>
     );
   }
@@ -73,7 +79,4 @@ class App extends Component {
 
 const mapStateToProps = ({ auth }) => ({ auth });
 
-export default compose(
-  withRouter,
-  connect(mapStateToProps)
-)(App);
+export default compose(withRouter, connect(mapStateToProps))(App);

@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 class HomeView extends Component {
@@ -7,9 +7,7 @@ class HomeView extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12 mt-3">
-            <div>
-              Welcome Home, {this.props.auth.user.displayName}
-            </div>
+            <div>Welcome Home, {this.props.auth.user.displayName}</div>
           </div>
         </div>
       </div>
@@ -17,8 +15,8 @@ class HomeView extends Component {
   }
 }
 
-const HomeViewWithState = connect(({auth}) => ({
-  auth
-}))(HomeView)
+const HomeViewWithState = connect(({ auth }) => ({
+  auth,
+}))(HomeView);
 
 export default HomeViewWithState;

@@ -10,8 +10,10 @@ class LoginView extends Component {
 
   signInGoogle() {
     let provider = new firebase.auth.GoogleAuthProvider();
-    firebase.auth().signInWithRedirect(provider)
-    .then(res => console.log(res));
+    firebase
+      .auth()
+      .signInWithRedirect(provider)
+      .then(res => console.log(res));
   }
 
   render() {
@@ -19,8 +21,8 @@ class LoginView extends Component {
       <div className="container">
         <div className="row">
           <div className="col-md-12 mt-3">
-            <button className="btn btn-default" onClick={this.signInGoogle} >
-              <i className="fa fa-google"/> Sign in using Google
+            <button className="btn btn-default" onClick={this.signInGoogle}>
+              <i className="fa fa-google" /> Sign in using Google
             </button>
           </div>
         </div>

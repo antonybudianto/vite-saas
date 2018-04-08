@@ -1,15 +1,15 @@
 const initialState = {
-  user: null
+  user: null,
 };
 
 const UPDATE_AUTH = 'APP/UPDATE_AUTH';
 
 const authReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case UPDATE_AUTH: {
       return {
         ...state,
-        user: action.payload
+        user: action.payload,
       };
     }
     default:
@@ -20,7 +20,7 @@ const authReducer = (state = initialState, action) => {
 export function updateAuth(user) {
   return {
     type: UPDATE_AUTH,
-    payload: user
+    payload: user,
   };
 }
 

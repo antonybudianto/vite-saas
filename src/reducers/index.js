@@ -5,7 +5,7 @@ import nav from './nav';
 
 const reducers = combineReducers({
   auth,
-  nav
+  nav,
 });
 
 export default reducers;

@@ -1,23 +1,23 @@
 const initialState = {
   collapsed: true,
-  showUserDropdown: false
+  showUserDropdown: false,
 };
 
 const TOGGLE_COLLAPSE = 'APP/TOGGLE_COLLAPSE';
 const TOGGLE_USER_DROPDOWN = 'APP/TOGGLE_USER_DROPDOWN';
 
 const navReducer = (state = initialState, action) => {
-  switch(action.type) {
+  switch (action.type) {
     case TOGGLE_COLLAPSE: {
       return {
         ...state,
-        collapsed: !state.collapsed
+        collapsed: !state.collapsed,
       };
     }
     case TOGGLE_USER_DROPDOWN: {
       return {
         ...state,
-        showUserDropdown: !state.showUserDropdown
+        showUserDropdown: !state.showUserDropdown,
       };
     }
     default:
@@ -27,13 +27,13 @@ const navReducer = (state = initialState, action) => {
 
 export function toggleCollapse() {
   return {
-    type: TOGGLE_COLLAPSE
+    type: TOGGLE_COLLAPSE,
   };
 }
 
 export function toggleUserDropdown() {
   return {
-    type: TOGGLE_USER_DROPDOWN
+    type: TOGGLE_USER_DROPDOWN,
   };
 }
 
