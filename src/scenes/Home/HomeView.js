@@ -1,22 +1,18 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
+import React from 'react';
 
-class HomeView extends Component {
-  render() {
-    return (
-      <div className="container">
-        <div className="row">
-          <div className="col-md-12 mt-3">
-            <div>Welcome Home, {this.props.auth.user.displayName}</div>
-          </div>
+import { useUser } from '../../context/auth';
+
+const HomeView = () => {
+  const { user } = useUser();
+  return (
+    <div className="container">
+      <div className="row">
+        <div className="col-md-12 mt-3">
+          <div>Welcome Home, {user.displayName}</div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
-const HomeViewWithState = connect(({ auth }) => ({
-  auth,
-}))(HomeView);
-
-export default HomeViewWithState;
+export default HomeView;
