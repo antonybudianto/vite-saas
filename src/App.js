@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { withRouter, Route } from 'react-router';
+import { withRouter, Route } from 'react-router-dom';
 import firebase from 'firebase/app';
 import 'firebase/auth';
-import { Switch } from 'react-router';
+import { Switch } from 'react-router-dom';
 import { compose } from 'recompose';
 
 import LoadableComponent from './components/LoadableComponent/LoadableComponent';
