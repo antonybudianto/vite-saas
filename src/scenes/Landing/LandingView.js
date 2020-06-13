@@ -8,7 +8,7 @@ const LandingView = () => (
       <div className="col-md-12 mt-3">
         <section className="jumbotron text-center">
           <div className="container">
-            <h1 className="jumbotron-heading">MayonTeam</h1>
+            <h1 className="jumbotron-heading">HelloApp</h1>
             <p className="lead text-muted">
               CRA starter with opinionated setup
             </p>
@@ -62,7 +62,7 @@ const LandingView = () => (
             <p className="float-right">
               <a href="#app">Back to top</a>
             </p>
-            <p>&copy; 2017 MayonTeam. </p>
+            <p>&copy; 2020. HelloApp. </p>
           </div>
         </footer>
       </div>

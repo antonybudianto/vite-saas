@@ -30,15 +30,13 @@ class App extends Component {
 
   componentDidMount() {
     const config = {
-      apiKey: 'AIzaSyBRPAvLUFnJ4GqCAizfXUMA-6tzksS39TA',
-      authDomain: 'mayonteam.firebaseapp.com',
-      databaseURL: 'https://mayonteam.firebaseio.com',
-      projectId: 'mayonteam',
-      storageBucket: 'mayonteam.appspot.com',
-      messagingSenderId: '9081437321',
+      apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+      authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+      databaseURL: process.env.REACT_APP_FIREBASE_DB_URL,
+      projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
     };
     firebase.initializeApp(config);
-    firebase.auth().onAuthStateChanged(user => {
+    firebase.auth().onAuthStateChanged((user) => {
       console.log(user);
       this.props.dispatch(updateAuth(user));
       this.setState({ loading: false });
