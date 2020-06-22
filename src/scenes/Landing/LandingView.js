@@ -28,9 +28,9 @@ const LandingView = () => (
             <div className="col-md-4">
               <div className="card text-white bg-dark mb-3">
                 <div className="card-body">
-                  <h4 className="card-title">Redux</h4>
+                  <h4 className="card-title">Context</h4>
                   <p className="card-text">
-                    Pre-setup with nav and auth reducer
+                    Pre-setup with nav and auth context
                   </p>
                 </div>
               </div>
