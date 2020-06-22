@@ -21,7 +21,10 @@
     "prettier": "prettier --write \"{src,__{tests,mocks}__}/**/*.js\""
   },
   "devDependencies": {
-    "prettier": "1.11.1"
+    "prettier": "2.0.5"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
   },
   "browserslist": {
     "production": [

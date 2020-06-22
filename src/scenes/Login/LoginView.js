@@ -13,7 +13,7 @@ class LoginView extends Component {
     firebase
       .auth()
       .signInWithRedirect(provider)
-      .then(res => console.log(res));
+      .then((res) => console.log(res));
   }
 
   render() {
