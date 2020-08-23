@@ -49,9 +49,7 @@ const LandingView = () => (
               <div className="card text-white bg-dark mb-3">
                 <div className="card-body">
                   <h4 className="card-title">Firebase</h4>
-                  <p className="card-text">
-                    Using Firebase for to hack even faster
-                  </p>
+                  <p className="card-text">Use Firebase to hack even faster</p>
                 </div>
               </div>
             </div>

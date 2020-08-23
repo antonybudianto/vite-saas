@@ -11,5 +11,14 @@ Technology stacks:
 - Firebase 7
 - Bootstrap 4
 - Font Awesome
-- React Loadable
+- Loadable Component
 - Recompose
+
+Before npm start, create new `.env` file and supply env values for firebase:
+
+```
+REACT_APP_FIREBASE_API_KEY=
+REACT_APP_FIREBASE_AUTH_DOMAIN=
+REACT_APP_FIREBASE_DB_URL=
+REACT_APP_FIREBASE_PROJECT_ID=
+```

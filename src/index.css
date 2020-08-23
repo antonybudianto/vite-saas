@@ -1,0 +1,64 @@
+#toastr {
+  position: fixed;
+  right: 0px;
+  top: 45px;
+  z-index: 9999;
+  font-size: 16pt;
+  margin-top: 15px;
+}
+
+#toastr > .toastr-child {
+  background-color: black;
+  padding: 5px 12px;
+  border-radius: 10px;
+  color: white;
+  margin: 10px;
+  animation: incoming 1s ease-in-out;
+  transform: translate(0, 0);
+}
+
+#toastr > .toastr-child.info {
+  background-color: darkcyan;
+  color: white;
+}
+
+#toastr > .toastr-child.closing {
+  animation: closing 1.2s ease-in-out;
+}
+
+.global-loader {
+  position: fixed;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+@keyframes incoming {
+  0% {
+    transform: translate(105%, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes closing {
+  0% {
+    transform: translate(0, 0);
+  }
+  90% {
+    transform: translate(110%, 0);
+  }
+  100% {
+    transform: translate(110%, 0);
+  }
+}

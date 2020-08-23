@@ -10,7 +10,8 @@ import 'font-awesome/css/font-awesome.css';
 import './index.css';
 
 import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import * as serviceWorker from './serviceWorker';
+import { info } from './utils/toastr';
 
 ReactDOM.render(
   <BrowserRouter>
@@ -22,4 +23,25 @@ ReactDOM.render(
   </BrowserRouter>,
   document.getElementById('root')
 );
-registerServiceWorker();
+
+serviceWorker.register({
+  onSuccess: () => {
+    info('Content is cached for offline use');
+  },
+  onUpdate: (registration) => {
+    const waitingServiceWorker = registration.waiting;
+    if (waitingServiceWorker) {
+      waitingServiceWorker.addEventListener('statechange', (event) => {
+        if (event.target.state === 'activated') {
+          info(
+            'New content is available. Page will reload within 3 seconds...'
+          );
+          setTimeout(() => {
+            window.location.reload();
+          }, 3000);
+        }
+      });
+      waitingServiceWorker.postMessage({ type: 'SKIP_WAITING' });
+    }
+  },
+});
