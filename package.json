@@ -1,17 +1,17 @@
 {
   "name": "helloapp",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "private": true,
   "dependencies": {
-    "bootstrap": "4.5.0",
-    "firebase": "7.15.0",
+    "bootstrap": "4.6.0",
+    "firebase": "8.2.7",
     "font-awesome": "4.7.0",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "@loadable/component": "5.13.1",
+    "react": "17.0.1",
+    "react-dom": "17.0.1",
+    "@loadable/component": "5.14.1",
     "react-router-dom": "5.2.0",
-    "react-scripts": "3.4.1",
-    "recompose": "0.26.0"
+    "react-scripts": "4.0.2",
+    "recompose": "0.30.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -21,7 +21,7 @@
     "prettier": "prettier --write \"{src,__{tests,mocks}__}/**/*.js\""
   },
   "devDependencies": {
-    "prettier": "2.0.5"
+    "prettier": "2.2.1"
   },
   "eslintConfig": {
     "extends": "react-app"
