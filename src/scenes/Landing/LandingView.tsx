@@ -1,5 +1,4 @@
-import React from 'react';
-
+import Footer from '@/components/Footer';
 import './LandingView.css';
 
 const LandingView = () => (
@@ -55,14 +54,7 @@ const LandingView = () => (
             </div>
           </div>
         </div>
-        <footer className="text-muted">
-          <div className="container">
-            <p className="float-right">
-              <a href="#app">Back to top</a>
-            </p>
-            <p>&copy; 2020. HelloApp. </p>
-          </div>
-        </footer>
+        <Footer />
       </div>
     </div>
   </div>

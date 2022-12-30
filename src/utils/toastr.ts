@@ -1,8 +1,8 @@
-function toast(text) {
+function toast(text: string) {
   const div = document.createElement('div');
   div.className = 'toastr-child';
   div.innerText = text;
-  document.getElementById('toastr').appendChild(div);
+  document.getElementById('toastr')?.appendChild(div);
   setTimeout(() => {
     div.classList.add('closing');
     setTimeout(() => {
@@ -12,7 +12,7 @@ function toast(text) {
   return div;
 }
 
-export function info(text) {
+export function info(text: string) {
   const div = toast(text);
   div.classList.add('info');
 }

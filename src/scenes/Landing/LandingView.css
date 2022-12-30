@@ -1,5 +1,5 @@
 body {
-  min-height: 75rem; /* Can be removed; just added for demo purposes */
+  min-height: 2rem;
 }
 
 .navbar {
@@ -31,5 +31,5 @@ footer {
 }
 
 footer p {
-  margin-bottom: .25rem;
+  margin-bottom: 0.25rem;
 }

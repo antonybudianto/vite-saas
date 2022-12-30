@@ -1,10 +1,9 @@
 import React from 'react';
 
-import firebase from 'firebase/app';
-import 'firebase/auth';
+import { getAuth, signOut } from 'firebase/auth';
 import { NavLink } from 'react-router-dom';
-import { useUser } from '../../context/auth';
-import { useNav } from '../../context/nav';
+import { useUser } from '@/context/auth';
+import { useNav } from '@/context/nav';
 
 const Navbar = () => {
   const { user } = useUser();
@@ -18,15 +17,16 @@ const Navbar = () => {
     toggleUserDropdown();
   };
 
-  const signOut = () => {
-    firebase.auth().signOut();
+  const handleSignOut = () => {
+    const auth = getAuth();
+    signOut(auth);
   };
 
   const isAuth = user !== null;
 
   return (
     <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
-      <NavLink to="/" exact className="navbar-brand" href="#nav">
+      <NavLink to="/" className="navbar-brand" href="#nav">
         HelloApp
       </NavLink>
       <button
@@ -49,12 +49,7 @@ const Navbar = () => {
         <ul className="navbar-nav mr-auto">
           <li className="nav-item active">
             {isAuth && (
-              <NavLink
-                to="/dashboard"
-                exact
-                className="nav-link"
-                href="#dashboard"
-              >
+              <NavLink to="/dashboard" className="nav-link" href="#dashboard">
                 Dashboard <span className="sr-only">(current)</span>
               </NavLink>
             )}
@@ -80,7 +75,11 @@ const Navbar = () => {
                 }
                 aria-labelledby="navbarDropdownMenuLink"
               >
-                <a onClick={signOut} className="dropdown-item" href="#signout">
+                <a
+                  onClick={handleSignOut}
+                  className="dropdown-item"
+                  href="#signout"
+                >
                   Sign out
                 </a>
               </div>
