@@ -1,6 +1,6 @@
 ## Vite SAAS
 
-<img src="http://i68.tinypic.com/1zvpvd4.png" />
+<img src="https://user-images.githubusercontent.com/7658554/210123280-82f2d2c9-3d13-4d35-b5aa-1735313b2e05.png" />
 
 Vite Starter for SAAS hackathon, a very opinionated starter
 
