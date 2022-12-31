@@ -10,27 +10,23 @@ const LoginView = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12 mt-3 p-5 bg-light rounded">
-          <h1>Sign-in </h1>
-          <p className="lead">
-            Sign-in for free and access your services anywhere.
-          </p>
-          <div className="mt-5">
-            <button
-              className="btn btn-default btn-outline-secondary"
-              onClick={signInGoogle}
-            >
-              <i className="fa fa-google" /> Sign in using Google
-            </button>
-          </div>
+    <div className="container mx-3 md:mx-auto">
+      <div className="mt-3 py-5 bg-light rounded md:my-28">
+        <h1>Sign-in </h1>
+        <p className="lead">
+          Sign-in for free and access your services anywhere.
+        </p>
+        <div className="mt-5">
+          <button
+            className="btn btn-default border px-4 py-2 btn-outline-secondary hover:bg-slate-300"
+            onClick={signInGoogle}
+          >
+            <i className="fa fa-google" /> Sign in using Google
+          </button>
         </div>
       </div>
-      <div className="row">
-        <div className="col-md-12">
-          <Footer />
-        </div>
+      <div className="col-md-12">
+        <Footer />
       </div>
     </div>
   );

@@ -2,9 +2,9 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
   return (
-    <footer className="pt-4 my-md-5 pt-md-5 border-top border-secondary">
-      <div className="row">
-        <div className="col-12 col-md">
+    <footer className="md:container mx-3 md:mx-auto pt-4 md:my-5 md:pt-5 border-top border-secondary">
+      <div className="flex flex-col md:flex-row">
+        <div className="w-full md:w-1/5 mb-5 md:mb-0">
           <img
             className="mb-2"
             src="https://stickynoted.netlify.app/favicon.ico"
@@ -16,12 +16,12 @@ function Footer() {
             © HelloApp. {new Date().getFullYear()}.
           </small>
         </div>
-        <div className="col-6 col-md">
+        <div className="w-2/5 mb-5 flex flex-col content-center md:mb-0 md:ml-10">
           <h5 className="text-dark">Resources</h5>
           <ul className="list-unstyled text-small">
             <li>
               <a
-                className="text-dark"
+                className="text-dark text-cyan-700 hover:underline"
                 href="https://www.producthunt.com/posts/stickynoted"
               >
                 Product Hunt
@@ -29,21 +29,30 @@ function Footer() {
             </li>
           </ul>
         </div>
-        <div className="col-6 col-md">
+        <div className="w-2/5 flex flex-col content-center">
           <h5 className="text-dark">About</h5>
           <ul className="list-unstyled text-small">
             <li>
-              <Link className="text-dark" to="/contact">
+              <Link
+                className="text-dark text-cyan-700 hover:underline"
+                to="/contact"
+              >
                 Contact us
               </Link>
             </li>
             <li>
-              <Link className="text-dark" to="/pricing">
+              <Link
+                className="text-dark text-cyan-700 hover:underline"
+                to="/pricing"
+              >
                 Pricing
               </Link>
             </li>
             <li>
-              <Link className="text-dark" to="/terms">
+              <Link
+                className="text-dark text-cyan-700 hover:underline"
+                to="/terms"
+              >
                 Privacy and Terms
               </Link>
             </li>

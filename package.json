@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@loadable/component": "5.14.1",
-    "bootstrap": "4.6.0",
     "firebase": "9.15.0",
     "font-awesome": "4.7.0",
     "react": "18.2.0",
@@ -22,17 +21,20 @@
     "prettier": "prettier --write \"{src,__{tests,mocks}__}/**/*.js\""
   },
   "devDependencies": {
-    "@types/loadable__component": "5.13.4",
+    "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
+    "@types/loadable__component": "5.13.4",
     "@types/react": "18.0.26",
     "@types/react-dom": "18.0.10",
     "@types/react-router-dom": "5.3.3",
     "@vitejs/plugin-react": "^3.0.0",
-    "@testing-library/jest-dom": "5.16.5",
+    "autoprefixer": "^10.4.13",
+    "jsdom": "20.0.3",
+    "postcss": "^8.4.20",
     "prettier": "2.2.1",
+    "tailwindcss": "^3.2.4",
     "vite": "^4.0.3",
     "vite-plugin-pwa": "0.14.0",
-    "vitest": "^0.26.2",
-    "jsdom": "20.0.3"
+    "vitest": "^0.26.2"
   }
 }

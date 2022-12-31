@@ -10,7 +10,7 @@ Technology stacks:
 - React 18.2.0
 - React Router 6
 - Firebase 9
-- Bootstrap 4
+- Tailwinds 3
 - Font Awesome
 - Loadable Component
 
